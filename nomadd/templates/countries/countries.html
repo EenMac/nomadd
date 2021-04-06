@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Countries</h1>
+
+    <table>
+        <tr>
+            <th>Name:</th>
+        </tr>
+        {% for countries in country  %}
+            <tr>
+                <td>
+                    <a href="/countries/{{countries.id}}">{{countries.name}}</a>
+                </td>
+                <td>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
