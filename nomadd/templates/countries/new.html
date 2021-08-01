@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Add a Country</h1>
+
+    <form action="/countries" method = "post">
+        <div>
+            <label for="countries"> Type a country name</label>
+            <input name="country_name" type="text" id="country_id" >
+        </div>
+        <div>
+            <label for="visited"> Have you visited this country before??</label>
+            <select name="visited" id="visited">
+                <option value = "true">Yes</option>
+                <option value= "false">No</option>
+            </select>
+
+        </div>
+    <div>
+    <button type="submit">Add Country</button>
+
+    </form>
+
+    
+{% endblock content %}

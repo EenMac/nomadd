@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{cities.name</h1>
+
+<div>
+    <h1>{{cities.city_name}}</h1>
+    <h2>{{cities.country.country_name}}</h2>
+    
+    {% if cities.visited %}
+    <p>This city has been explored</p>
+    {% else %}
+    <p>This city has yet to be explored</p>
+    {% endif %}
+</div>
 {% endblock content %}

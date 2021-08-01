@@ -1,0 +1,26 @@
+.delete_buttons {
+    color: wheat;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 2px;
+    border-color: grey;
+    word-spacing: 3px;
+}
+
+.add_button {
+    background-color: black;
+    border-style: double;
+    border-color: grey;
+    font-size: larger;
+    font-style: bold;
+    color: whitesmoke;
+    
+}
+.button_font{
+    color: black;
+    font-style: bold, italic;
+    
+}
+.add-button-font{
+    color: white;
+    font-style: None;
+}

@@ -2,7 +2,12 @@
 
 {% block content %}
 
-    <h1>{{countries.name}}</h1>
+    <h1>{{countries.country_name}}</h1>
+    {% if countries.visited %}
+    <p>No</p>
+    {% else %}
+    <p>This country has been visited</p>
+    {% endif %}
 
 
 {% endblock content %}

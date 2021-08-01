@@ -1,17 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Choose your country</h1>
+    <body class = "background1"> 
+        <h1>Choose your city</h1>
+    <button class = "add_button">
+        <a class = add-button-font" href="/cities/new">Add city</a>
+    </button>
+    
+    {% for city in cities %}
+    <div>
+
     <table>
         <tr>
-            <th>Name</th>
+        <a class = "button_font" href="/cities/{{city.id}}">{{city.city_name}}</a>
             
         </tr>
         <tr>
-            {% for country in countries %}
-                <td> <a href="/cities/{{city.id}}">{{cities.name}}</a></td>
-                <td></td>
+            
+            <tr>
+                <td> 
+                    <form action="/cities/{{city.id}}/delete" method="POST">
+                        <button>delete</button>
+                    </form>
+                </td>
+            </tr>    
             {% endfor %}
         </tr>
-    </table>
+    </div> 
+</table>
+</body>
 {% endblock content %}

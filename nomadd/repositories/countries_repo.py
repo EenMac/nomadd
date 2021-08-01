@@ -3,6 +3,11 @@ from models.countries import Countries
 
 
 # what functions do I want:
+# SET UP THE SQL STATEMENT
+# Cennect to db
+# execute sql
+# commit the changes to the database
+# get the saved destination back with its ID
 
 # SAVE
 def save(country):
@@ -18,30 +23,29 @@ def save(country):
 def select_all():
     countries = []
 
-    sql= "SELECT * FROM countries"
+    sql= "SELECT * FROM countries ORDER BY country_name;"
     result = run_sql(sql)
 
     for row in result:
-        country = Countries(row['country_name'], row['id'])
+        country = Countries(row['country_name'], row['visited'],row['id'])
         countries.append(country)
     return countries
 
 def select(id):
-    countries = None
     sql = "SELECT * FROM countries WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-
+    
     if result is not None:
-        country= Countries(result['country_name'], result['id'])
-    return countries
+        return Countries(result['country_name'], result['visited'], result['id'])
 
 def delete_all():
     sql = "Delete FROM countries"
     run_sql(sql)
 
-# SET UP THE SQL STATEMENT
-# Cennect to db
-# execute sql
-# commit the changes to the database
-# get the saved destination back with its ID
+def delete(id):
+    sql = "DELETE FROM countries WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+

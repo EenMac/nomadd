@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Countries</h1>
+<body class = "background2">
 
-    <table>
-        <tr>
-            <th>Name:</th>
-        </tr>
-        {% for countries in country  %}
-            <tr>
-                <td>
-                    <a href="/countries/{{countries.id}}">{{countries.name}}</a>
-                </td>
-                <td>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+<h1>Countries</h1>
+<button class="add_button">
+    <a href="/countries/new">Add Country</a>
+</button>
+
+{% for country in countries %}
+<div>
+    <a href="/countries/{{country.id}}">{{country.country_name}}</a>
+    <form action="/countries/{{country.id}}/delete" method="POST">
+        <button> delete </button>
+    </form>
+</div>
+</body>
+
+{% endfor %}
+
 {% endblock content %}

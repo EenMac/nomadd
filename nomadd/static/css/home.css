@@ -1,0 +1,35 @@
+.background{
+    background-image: url('/static/images/main.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.background1{
+    background-image: url('../images/bg2.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.background2{
+    background-image: url('/static/images/country.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+table {
+    width : 700px;
+}
+
+.main_table{
+    border: 2px;
+    text-align: right;
+}
+table {
+    width:400px;
+}
+table {
+    align-items: center;
+    border: 1px;
+    
+}
+
